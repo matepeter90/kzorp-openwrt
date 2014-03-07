@@ -1,3 +1,0 @@
-config ZORP_ADDONS
-	prompt "Zorp addon.......................... Zorp userspace iptables addon"
-	tristate

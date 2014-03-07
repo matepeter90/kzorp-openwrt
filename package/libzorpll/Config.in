@@ -1,3 +1,0 @@
-config	libzorpll
-	prompt "libzorpll.......................... Low level functions for Zorp"
-	tristate
