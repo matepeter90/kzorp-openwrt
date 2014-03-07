@@ -1,3 +1,0 @@
-config zorp
-	prompt "zorp.......................... Zorp application layer firewall"
-	tristate
