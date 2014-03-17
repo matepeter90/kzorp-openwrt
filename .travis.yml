@@ -1,0 +1,11 @@
+language: c
+before_install:
+- sudo apt-get install gcc binutils patch bzip2 flex make gettext pkg-config unzip libz-dev libc6-dev gperf quilt
+script:
+- wget http://home.sch.bme.hu/~matepeter90/upload/.config
+- ./scripts/feeds update
+- ./scripts/feeds install zorp
+- time make
+branches:
+  only:
+    - master
