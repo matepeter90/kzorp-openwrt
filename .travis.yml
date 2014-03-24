@@ -8,6 +8,7 @@ script:
 - cp ../feeds.conf.default .
 - ./scripts/feeds update
 - ./scripts/feeds install zorp
+- ln -s ./staging_dir/host/bin/sed /bin/sed
 - make package/feeds/packages/zorp/{clean,compile} V=s
 branches:
   only:
