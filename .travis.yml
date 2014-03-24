@@ -5,11 +5,9 @@ script:
 - wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
 - tar -xf OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
 - cd OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2
-- cp ../feeds.conf.default .
 - ./scripts/feeds update
-- ./scripts/feeds install zorp
-- sed -i 's/SED="\/build\/x86.*"/SED="sed"/' ./staging_dir/host/bin/libtool
-- make package/feeds/packages/zorp/{clean,compile} V=s
+- ./scripts/feeds install python
+- make package/feeds/packages/python/{clean,compile} V=s
 branches:
   only:
     - master
