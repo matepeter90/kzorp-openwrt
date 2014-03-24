@@ -2,10 +2,12 @@ language: c
 before_install:
 - sudo apt-get install gcc binutils patch bzip2 flex make gettext pkg-config unzip libz-dev libc6-dev gperf quilt
 script:
-- wget http://home.sch.bme.hu/~matepeter90/upload/.config
+- wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
+- tar -xf OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
+- cd OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
+- cp ../feeds.conf.default .
 - ./scripts/feeds update
 - ./scripts/feeds install zorp
-- time make
 branches:
   only:
     - master
