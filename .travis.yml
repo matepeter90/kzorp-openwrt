@@ -8,6 +8,7 @@ script:
 - ./scripts/feeds update
 - ./scripts/feeds install python
 - echo "CONFIG_CCACHE=n" >> .config
+- cat .config
 - make package/feeds/packages/python/{clean,compile} V=s
 branches:
   only:
