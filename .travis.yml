@@ -8,6 +8,7 @@ script:
 - cp ../feeds.conf.default .
 - ./scripts/feeds update
 - ./scripts/feeds install zorp
+- make package/feeds/packages/zorp{compile} V=s
 branches:
   only:
     - master
