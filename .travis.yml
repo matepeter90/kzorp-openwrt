@@ -7,8 +7,8 @@ script:
 - cd OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2
 - ./scripts/feeds update
 - ./scripts/feeds install python
-- echo "CONFIG_CCACHE=n" >> .config
-- cat .config
+- sed -i 's/CONFIG_CCACHE=y/#CONFIG_CCACHE is not set/'
+- grep CONFIG_CCACHE .config
 - make package/feeds/packages/python/{clean,compile} V=s
 branches:
   only:
