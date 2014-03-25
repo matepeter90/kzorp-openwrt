@@ -2,14 +2,14 @@ language: c
 before_install:
 - sudo apt-get install gcc binutils patch bzip2 flex make gettext pkg-config unzip libz-dev libc6-dev gperf quilt sed ccache
 script:
-- wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
-- tar -xf OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
-- cd OpenWrt-SDK-ar71xx-for-linux-i486-gcc-4.6-linaro_uClibc-0.9.33.2
+- wget http://home.sch.bme.hu/~matepeter90/upload/OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
+- tar -xf OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
+- cd OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2
 - ./scripts/feeds update
-- ./scripts/feeds install python
+- ./scripts/feeds install zorp
 - sed -i 's/CONFIG_CCACHE=y/#CONFIG_CCACHE is not set/' .config
 - grep CONFIG_CCACHE .config
-- make package/feeds/packages/python/{clean,compile} V=s
+- make package/feeds/packages/zorp/{clean,compile} V=s
 branches:
   only:
     - master
