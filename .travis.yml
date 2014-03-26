@@ -8,8 +8,8 @@ script:
 - ./scripts/feeds update
 - ./scripts/feeds install zorp
 - sed -i 's/CONFIG_CCACHE=y/#CONFIG_CCACHE is not set/' .config
-- grep CONFIG_CCACHE .config
-- make package/feeds/packages/zorp/{clean,compile} V=s
+- unset SED
+- make package/feeds/packages/python/{compile,install} V=s
 branches:
   only:
     - master
