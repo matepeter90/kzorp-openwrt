@@ -9,6 +9,7 @@ script:
 - ./scripts/feeds install zorp
 - sed -i 's/CONFIG_CCACHE=y/#CONFIG_CCACHE is not set/' .config
 - unset SED
+- unset CC
 - make package/feeds/packages/python/{compile,install} V=s
 branches:
   only:
