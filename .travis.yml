@@ -5,13 +5,10 @@ script:
 - wget http://home.sch.bme.hu/~matepeter90/upload/OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
 - tar -xf OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2.tar.bz2
 - cd OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2
+- unset SED
 - ./scripts/feeds update
 - ./scripts/feeds install zorp
-- export PATH=$PATH:/home/travis/build/matepeter90/kzorp-openwrt/OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2/staging_dir/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin
-- export STAGING_DIR=/home/travis/build/matepeter90/kzorp-openwrt/OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2/staging_dir/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2
-- unset SED
-- env
-- make package/feeds/packages/python/{compile,install} V=s
+- make V=s
 branches:
   only:
     - master
