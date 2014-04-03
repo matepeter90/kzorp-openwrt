@@ -7,8 +7,9 @@ script:
 - cd OpenWrt-SDK-ar71xx-for-linux-i686-gcc-4.6-linaro_uClibc-0.9.33.2
 - unset SED
 - ./scripts/feeds update
-- ./scripts/feeds install zorp
-- make V=s
+- ./scripts/feeds install python
+- sed -i 's/CONFIG_CCACHE=y/#CONFIG_CCACHE is not set/' .config
+- make package/feeds/packages/python/{clean,compile} V=s
 branches:
   only:
     - master
