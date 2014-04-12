@@ -12,4 +12,4 @@ script:
 - make package/feeds/packages/python/{clean,compile} V=s
 branches:
   only:
-    - master
+    - travis
