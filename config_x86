@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # OpenWrt version: Attitude Adjustment (r40431)
-# Wed May 28 08:15:07 2014
+# Wed May 28 08:27:58 2014
 #
 CONFIG_HAVE_DOT_CONFIG=y
 # CONFIG_TARGET_ppc40x is not set
@@ -453,7 +453,7 @@ CONFIG_X86_GRUB_SERIAL="ttyS0"
 CONFIG_X86_GRUB_BAUDRATE=38400
 CONFIG_X86_GRUB_BOOTOPTS=""
 CONFIG_X86_GRUB_TIMEOUT="5"
-# CONFIG_X86_VDI_IMAGES is not set
+CONFIG_X86_VDI_IMAGES=y
 # CONFIG_X86_VMDK_IMAGES is not set
 # CONFIG_TARGET_IMAGES_PAD is not set
 CONFIG_TARGET_IMAGES_GZIP=y
